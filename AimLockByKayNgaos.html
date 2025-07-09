@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KayNgaos Mod Menu FF</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #00ffe0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background: #111;
+      text-align: center;
+      padding: 15px;
+      font-size: 24px;
+      border-bottom: 2px solid #00ffe0;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #111;
+      border-bottom: 1px solid #00ffe0;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      background: #111;
+      border-right: 1px solid #00ffe0;
+      transition: 0.2s;
+    }
+
+    .tab:last-child {
+      border-right: none;
+    }
+
+    .tab.active {
+      background: #00ffe0;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .mod-item {
+      background: #111;
+      border: 1px solid #00ffe0;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px auto;
+      max-width: 340px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mod-item input[type="checkbox"] {
+      transform: scale(1.4);
+      accent-color: #00ffe0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>KayNgaos FF Hack Menu</header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('aim')">AIM</div>
+    <div class="tab" onclick="showTab('esp')">ESP</div>
+    <div class="tab" onclick="showTab('info')">VIP</div>
+  </div>
+
+  <!-- AIM Tab -->
+  <div id="aim" class="tab-content active">
+    <div class="mod-item"><label>Aimlock</label><input type="checkbox" id="aimlock"></div>
+    <div class="mod-item"><label>Aimbot Pro</label><input type="checkbox" id="aimbot"></div>
+    <div class="mod-item"><label>Auto Headshot</label><input type="checkbox" id="headshot"></div>
+    <div class="mod-item"><label>Magic Bullet</label><input type="checkbox" id="magicbullet"></div>
+    <div class="mod-item"><label>Auto Kill</label><input type="checkbox" id="autokill"></div>
+    <div class="mod-item"><label>Wallshot</label><input type="checkbox" id="wallshot"></div>
+    <div class="mod-item"><label>Instant Knock</label><input type="checkbox" id="instantknock"></div>
+    <div class="mod-item"><label>Perfect Aim</label><input type="checkbox" id="perfectaim"></div>
+  </div>
+
+  <!-- ESP Tab -->
+  <div id="esp" class="tab-content">
+    <div class="mod-item"><label>ESP Name</label><input type="checkbox" id="espname"></div>
+    <div class="mod-item"><label>ESP Line</label><input type="checkbox" id="espline"></div>
+    <div class="mod-item"><label>ESP Box</label><input type="checkbox" id="espbox"></div>
+    <div class="mod-item"><label>ESP Health</label><input type="checkbox" id="esphealth"></div>
+    <div class="mod-item"><label>Radar Hack</label><input type="checkbox" id="radar"></div>
+    <div class="mod-item"><label>Wallhack</label><input type="checkbox" id="wallhack"></div>
+    <div class="mod-item"><label>Ghost Mode</label><input type="checkbox" id="ghost"></div>
+    <div class="mod-item"><label>Fly Hack</label><input type="checkbox" id="fly"></div>
+    <div class="mod-item"><label>Telekill</label><input type="checkbox" id="telekill"></div>
+  </div>
+
+  <!-- VIP Tab -->
+  <div id="info" class="tab-content">
+    <div class="mod-item"><label>Speed x10</label><input type="checkbox" id="speed10"></div>
+    <div class="mod-item"><label>Speed x20</label><input type="checkbox" id="speed20"></div>
+    <div class="mod-item"><label>No Recoil</label><input type="checkbox" id="norecoil"></div>
+    <div class="mod-item"><label>No Spread</label><input type="checkbox" id="nospread"></div>
+    <div class="mod-item"><label>Unlock Skin</label><input type="checkbox" id="unlockskin"></div>
+    <div class="mod-item"><label>Infinite Jump</label><input type="checkbox" id="infinitejump"></div>
+    <div class="mod-item"><label>Jump + Gravity</label><input type="checkbox" id="gravity"></div>
+    <div class="mod-item"><label>Night Mode</label><input type="checkbox" id="night"></div>
+  </div>
+
+  <footer>© 2025 KayNgaos2k12 – Mod Menu FF | Phiên bản Vip</footer>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // Lưu console log khi bật tắt chức năng
+    document.querySelectorAll('input[type="checkbox"]').forEach(el => {
+      el.addEventListener('change', () => {
+        console.log(`[MOD] ${el.id}: ${el.checked ? 'ON' : 'OFF'}`);
+      });
+    });
+  </script>
+</body>
+</html>
